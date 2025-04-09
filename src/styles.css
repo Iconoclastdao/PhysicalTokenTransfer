@@ -1,0 +1,262 @@
+/* ================================
+   🎨 Global Styles (Easy Customization)
+   ================================ */
+:root {
+  --primary-bg: #1E1E2F;       /* Deep navy background */
+  --secondary-bg: #2A2A3D;     /* Section background */
+  --accent-bg: indigo;         /* Primary accent color */
+  --hover-bg: #4b0082;         /* Hover effect */
+  --text-light: LavenderBlush; /* Soft pink text */
+  --text-dark: white;        /* Slightly darker text */
+  --danger: #ff4c4c;           /* Error/Warning color */
+  --border-radius: 14px;       /* Rounded corners */
+  --shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  --padding: 22px;             /* Default padding */
+}
+
+/* ================================
+   📌 Reset & Base Styles
+   ================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Bradley DJR Variable", sans-serif; /* Custom font */
+   background-image: url('/logo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+/* ================================
+   🔘 Button Styles (Indigo & Dark Grey)
+   ================================ */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border: 2px solid #4a4a4a; /* Dark Gray Outline */
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+}
+
+/* ✅ Indigo Primary Button */
+.btn-primary {
+  background-color: var(--accent-bg);
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-bg);
+  transform: scale(1.05);
+}
+
+/* ✅ Success Button */
+.btn-success {
+  background-color: #3a3d5c;
+}
+
+.btn-success:hover {
+  background-color: #2c2e47;
+}
+
+/* ✅ Danger Button */
+.btn-danger {
+  background-color: #5c3a4a;
+}
+
+.btn-danger:hover {
+  background-color: #472c3a;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+/* ================================
+   🔹 Logo Replaces Highlighted Sections
+   ================================ */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.logo-container img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* ================================
+   🎛 Capsule Controller Styling
+   ================================ */
+.capsule-container {
+  background-color: var(--secondary-bg);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 820px;
+  margin: 24px auto;
+  text-align: center;
+}
+
+/* 🔹 Logo Above Titles */
+.capsule-container h2::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-image: url('/logo.jpeg'); /* Logo replaces gold elements */
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto 10px auto;
+}
+
+/* ================================
+   🏦 Swap Interface Styles
+   ================================ */
+.swap-container {
+  background-color: var(--secondary-bg);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  margin-top: 22px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: var(--shadow);
+}
+
+/* Swap Input Fields */
+.swap-container input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--text-dark);
+  background-color: #333;
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+/* ================================
+   🔘 Input Fields Styling
+   ================================ */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--text-dark);
+  background-color: #333;
+  color: var(--text-light);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+  border-color: var(--accent-bg);
+  box-shadow: 0px 0px 10px var(--accent-bg);
+}
+
+/* ================================
+   🎛 Grid Layouts for Forms
+   ================================ */
+.grid-container {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ================================
+   📊 Dashboard Styling
+   ================================ */
+.main-content {
+  margin-left: 280px;
+  padding: var(--padding);
+  flex-grow: 1;
+  background-color: var(--secondary-bg);
+  color: var(--text-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Fade-in effect */
+.main-content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   📱 Responsive Design (Mobile-Friendly)
+   ================================ */
+@media (max-width: 768px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  input {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .logo-container img {
+    width: 80px;
+    height: 80px;
+  }
+}
